@@ -1,0 +1,39 @@
+{
+  "info": {
+    "name": "WorkoutTracker",
+    "_postman_id": "workout-tracker-sample",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET /api/v1/users",
+      "request": { "method": "GET", "url": { "raw": "http://localhost:8000/api/v1/users", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["api","v1","users"] } }
+    },
+    {
+      "name": "POST /api/v1/users",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"test@example.com\"\n}" },
+        "url": { "raw": "http://localhost:8000/api/v1/users", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["api","v1","users"] }
+      }
+    },
+    {
+      "name": "GET /api/v1/users/:id",
+      "request": { "method": "GET", "url": { "raw": "http://localhost:8000/api/v1/users/:id", "protocol":"http","host":["localhost"],"port":"8000","path":["api","v1","users",":id"] } }
+    },
+    {
+      "name": "PUT /api/v1/users/:id",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"name\": \"Updated\",\n  \"email\": \"updated@example.com\"\n}" },
+        "url": { "raw": "http://localhost:8000/api/v1/users/:id", "protocol":"http","host":["localhost"],"port":"8000","path":["api","v1","users",":id"] }
+      }
+    },
+    {
+      "name": "DELETE /api/v1/users/:id",
+      "request": { "method": "DELETE", "url": { "raw": "http://localhost:8000/api/v1/users/:id", "protocol":"http","host":["localhost"],"port":"8000","path":["api","v1","users",":id"] } }
+    }
+  ]
+}
