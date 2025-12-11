@@ -1,11 +1,21 @@
-const { port } = require('./config/env'); // Import the port from the env file
+const express = require("express");
+const { port } = require("./config/env");
+const routes = require("./routes");
 
-// Inicializacion del servidor y primera ruta
+const app = express();
+
+// Middlewares
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Prueba básica
 app.get("/", (req, res) => {
   res.send("Hola mi server en Express");
 });
 
-// Inicio del servidor
+// API versionada
+app.use("/api", routes);
+
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
 });
